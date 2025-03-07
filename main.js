@@ -2,27 +2,33 @@ const SideBarModule = (function () {
     const closeBtns = document.querySelectorAll('.js-side-bar-toggle');
     const sideBar = document.getElementById('aside');
     const sideBarLinks = document.querySelectorAll('.js-aside__link');
-
-    const banner = document.getElementById('banner');
-    const about = document.getElementById('about');
-    const service = document.getElementById('service');
-    const portfolio = document.getElementById('portfolio');
-    const contact = document.getElementById('contact');
-
-    const bannerLink = document.getElementById('banner-link');
-    const aboutLink = document.getElementById('about-link');
-    const serviceLink = document.getElementById('service-link');
-    const portfolioLink = document.getElementById('portfolio-link');
-    const contactLink = document.getElementById('contact-link');
+    const asideLinkGroup = document.getElementById('aside__link-group');
 
     // Click event listener for open-close sidebar buttons
     closeBtns.forEach(function (element) {
         element.addEventListener('click', function (event) {
-            sideBar.classList.toggle('aside--open');
             element.classList.toggle('open');
+            sideBar.classList.toggle('aside--open');
+            const header = document.getElementById('header');
+            
+            document.body.classList.toggle("no-scroll");
+      
+            if (!asideLinkGroup.classList.contains('aside__link-group--active')) {
+                setTimeout(function () {
+                    asideLinkGroup.classList.toggle('aside__link-group--active');
+                }, 300)
+            } else {
+                asideLinkGroup.classList.toggle('aside__link-group--active');
+            }
+
+            if (sideBar.classList.contains("aside--open")) {
+                header.classList.remove('header--scroll-active');
+            } else {
+                let y = window.scrollY || window.pageYOffset;
+                if (y > 0) header.classList.add('header--scroll-active');
+            }
         })
     })
-    
 
     // Click event listener for every sidebar link 
     sideBarLinks.forEach(function (element) {
@@ -52,58 +58,19 @@ const SideBarModule = (function () {
             }, 500);
         })
     })
-
-    //Page scroll event listener (change side-bar active link)
-    window.addEventListener('scroll', SideBarScrollAnimation);
-
-    function SideBarScrollAnimation() {
-        let sideBarLinkActive = document.querySelector('.sidebar--active');
-        let y = Math.round(this.scrollY);
-
-        if (y >= banner.offsetTop && y < about.offsetTop) {
-            sideBarLinkActive.classList.remove('sidebar--active');
-            bannerLink.classList.add('sidebar--active');
-        }
-
-        if (y >= about.offsetTop && y < service.offsetTop) {
-            sideBarLinkActive.classList.remove('sidebar--active');
-            aboutLink.classList.add('sidebar--active');
-        }
-
-        if (y >= service.offsetTop && y < portfolio.offsetTop) {
-            sideBarLinkActive.classList.remove('sidebar--active');
-            serviceLink.classList.add('sidebar--active');
-        }
-
-
-        if (y >= portfolio.offsetTop && y < contact.offsetTop && Math.ceil(window.innerHeight + window.scrollY) < document.body.scrollHeight) {
-            sideBarLinkActive.classList.remove('sidebar--active');
-            portfolioLink.classList.add('sidebar--active');
-        }
-
-        if (y >= contact.offsetTop) {
-            sideBarLinkActive.classList.remove('sidebar--active');
-            contactLink.classList.add('sidebar--active');
-        }
-
-        if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-            sideBarLinkActive.classList.remove('sidebar--active');
-            contactLink.classList.add('sidebar--active');
-        }
-    }
 })()
 
 const HeaderModule = (function () {
-    const header = document.getElementById('banner-header');
+    const header = document.getElementById('header');
 
     // Active header if page is away from top
     window.addEventListener('scroll', function () {
         let y = Math.round(this.scrollY);
 
         if (y > 0) {
-            header.classList.add('banner__header--scroll-active');
+            header.classList.add('header--scroll-active');
         } else {
-            header.classList.remove("banner__header--scroll-active");
+            header.classList.remove("header--scroll-active");
         }
     });
 })();

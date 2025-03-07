@@ -1,160 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- Font-awesome 3.2.1 -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <aside id="aside" class="aside">
-      <div class="aside__wrapper">
-        <div class="aside__link-group">
-          <a
-            id="banner-link"
-            href="#banner"
-            class="aside__link sidebar--active js-aside__link"
-            >In House Studio
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Font-awesome 3.2.1 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <aside id="aside" class="aside">
+    <div class="aside__wrapper1">
+      <div class="aside__wrapper2">
+        <h2 class="aside__header">Mai Hoàng <span class="sub-title">Studio</span></h2>
+        <div class="aside__link-group" id="aside__link-group">
+          <a id="banner-link" href="#banner" class="aside__link sidebar--active js-aside__link">In House Studio
           </a>
-          <a id="about-link" href="#about" class="aside__link js-aside__link"
-            >Santorini Studio</a
-          >
-          <a
-            id="service-link"
-            href="#service"
-            class="aside__link js-aside__link"
-            >5 Garden Studio</a
-          >
-          <a
-            id="portfolio-link"
-            href="#portfolio"
-            class="aside__link js-aside__link"
-            >Villa Rose Studio</a
-          >
-          <a
-            id="contact-link"
-            href="#contact"
-            class="aside__link js-aside__link"
-            >Ocean Park 3 Studio</a
-          >
+          <a id="about-link" href="#about" class="aside__link js-aside__link">Santorini Studio</a>
+          <a id="service-link" href="#service" class="aside__link js-aside__link">5 Garden Studio</a>
+          <a id="portfolio-link" href="#portfolio" class="aside__link js-aside__link">Villa Rose Studio</a>
+          <a id="contact-link" href="#contact" class="aside__link js-aside__link">Ocean Park 3 Studio</a>
         </div>
       </div>
-    </aside>
+    </div>
+  </aside>
 
-    <div class="wrapper">
+  <div class="wrapper">
+    <section class="header" id="header">
       <div class="menu-icon js-side-bar-toggle">
         <span class="line line-top"></span>
         <span class="line line-bottom"></span>
       </div>
-      <div class="background">
-        <div class="vignette-cur"></div>
-        <div class="shadow-cur"></div>
-        <div class="content">
-          <p class="content_title-1">Mai Hoàng</p>
-          <p class="content_title-2">Studio</p>
-        </div>
-        <div class="navigation">
-          <span class="navigation_title">01</span>
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
-          <span class="navigation_title">04</span>
-        </div>
+    </section>
+    <div class="background">
+      <div class="vignette-cur"></div>
+      <div class="shadow-cur"></div>
+      <div class="content">
+        <p class="content_title-1">Mai Hoàng</p>
+        <p class="content_title-2">Studio</p>
       </div>
-      <div class="seemore">
-        <button class="btn btn-seemore">Xem thêm</button>
+      <div class="navigation">
+        <span class="navigation_title">01</span>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <span class="navigation_title">04</span>
       </div>
     </div>
+    <div class="seemore">
+      <button class="btn btn-seemore">Xem thêm</button>
+    </div>
+  </div>
 
-    <div class="section-studio">
-      <div class="section-studio_title">
-        <span class="section-studio_title-line"> </span>
-        <div class="section-studio_subtitle">
-          <h4 class="section-studio_subtitle1">01</h4>
-          <h2 class="section-studio_subtitle2">In House Studio</h2>
-        </div>
-        <span class="section-studio_title-line"> </span>
+  <div class="section-studio">
+    <div class="section-studio_title">
+      <span class="section-studio_title-line"> </span>
+      <div class="section-studio_subtitle">
+        <h4 class="section-studio_subtitle1">01</h4>
+        <h2 class="section-studio_subtitle2">In House Studio</h2>
       </div>
+      <span class="section-studio_title-line"> </span>
+    </div>
+    <div class="section-studio_gallery-wrapper">
+      <button class="section-studio_gallery-button">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+      </button>
       <div class="section-studio_gallery">
-        <img
-          class="section-studio_gallery_item tall"
-          src="images/in studio.png"
-          alt="Hình ảnh 1"
-        />
-        <img
-          class="section-studio_gallery_item wide"
-          src="images/in studio-2.png"
-          alt="Hình ảnh 1"
-        />
-        <img
-          class="section-studio_gallery_item tall"
-          src="images/in studio-1.png"
-          alt="Hình ảnh 1"
-        />
-        <img
-          class="section-studio_gallery_item wide"
-          src="images/in studio-3.png"
-          alt="Hình ảnh 1"
-        />
+        <img class="section-studio_gallery_item tall" src="images/in studio.png" alt="Hình ảnh 1" />
+        <img class="section-studio_gallery_item wide" src="images/in studio-2.png" alt="Hình ảnh 1" />
+        <img class="section-studio_gallery_item tall" src="images/in studio-1.png" alt="Hình ảnh 1" />
+        <img class="section-studio_gallery_item wide" src="images/in studio-3.png" alt="Hình ảnh 1" />
       </div>
+      <button class="section-studio_gallery-button">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </button>
+    </div>
 
-      <div class="section-studio_content">
-        <div class="section-studio_content_text">
-          <div class="section-studio_content_text-outer1">
-            <div class="section-studio_content_text-inner1">
-              <div class="section-studio_content_text-outer2">
-                <div class="section-studio_content_text-inner2">
-                  <p>
-                    Phim trường Santorini Park là một không gian được thiết kế
-                    lấy cảm hứng từ hòn đảo Santorini xinh đẹp của Hy Lạp, với
-                    những ngôi nhà trắng mái xanh đặc trưng, những con đường nhỏ
-                    hẹp và những góc view lãng mạn. Phim trường Santorini Park
-                    là một địa điểm lý tưởng để ấn tượng thực hiện những bộ ảnh
-                    đẹp và ấn tượng. Với không gian lãng mạn và đa dạng,
-                    Santorini Park chắc chắn sẽ không làm bạn thất vọng.
-                  </p>
-                </div>
+    <div class="section-studio_content">
+      <div class="section-studio_content_text">
+        <div class="section-studio_content_text-outer1">
+          <div class="section-studio_content_text-inner1">
+            <div class="section-studio_content_text-outer2">
+              <div class="section-studio_content_text-inner2">
+                <p>
+                  Phim trường Santorini Park là một không gian được thiết kế
+                  lấy cảm hứng từ hòn đảo Santorini xinh đẹp của Hy Lạp, với
+                  những ngôi nhà trắng mái xanh đặc trưng, những con đường nhỏ
+                  hẹp và những góc view lãng mạn. Phim trường Santorini Park
+                  là một địa điểm lý tưởng để ấn tượng thực hiện những bộ ảnh
+                  đẹp và ấn tượng. Với không gian lãng mạn và đa dạng,
+                  Santorini Park chắc chắn sẽ không làm bạn thất vọng.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <section class="contact" id="contact">
-      <h4 class="contact__title">Liên Lạc Với Chúng Tôi</h4>
-      <div class="contact__info">
-        <h4 class="contact__info-title">
-          Số 39 Phú Thị - Trân Tảo - Gia Lâm - HN
-        </h4>
-        <a class="contact__info-title">facebook.com/HoangPhuongMai.46</a>
-        <a class="contact__info-title">facebook.com/anhvienaocuoiMaiHoang</a>
-      </div>
-    </section>
+  <section class="contact" id="contact">
+    <h4 class="contact__title">Liên Lạc Với Chúng Tôi</h4>
+    <div class="contact__info">
+      <h4 class="contact__info-title">
+        Số 39 Phú Thị - Trân Tảo - Gia Lâm - HN
+      </h4>
+      <a class="contact__info-title">facebook.com/HoangPhuongMai.46</a>
+      <a class="contact__info-title">facebook.com/anhvienaocuoiMaiHoang</a>
+    </div>
+  </section>
 
-    <!-- <footer class="footer"> -->
-    <footer class="footer">
-      <div class="footer_title">
-        <h4 class="footer_subtitle1">Mai Hoàng Wedding</h4>
-        <p class="footer_subtitle2">
-          Chúng tôi tự hào đồng hành cùng bạn lưu giữ những kỷ niệm nhớ nhất
-          trong đời.
-        </p>
-      </div>
-      <div class="footer__info-icon-group">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-github-square"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <p class="footer__content">© 2024 All rights reserved</p>
-    </footer>
+  <!-- <footer class="footer"> -->
+  <footer class="footer">
+    <div class="footer_title">
+      <h4 class="footer_subtitle1">Mai Hoàng Wedding</h4>
+      <p class="footer_subtitle2">
+        Chúng tôi tự hào đồng hành cùng bạn lưu giữ những kỷ niệm nhớ nhất
+        trong đời.
+      </p>
+    </div>
+    <div class="footer__info-icon-group">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github-square"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p class="footer__content">© 2024 All rights reserved</p>
+  </footer>
 
-    <script src="main.js"></script>
-  </body>
+  <script src="main.js"></script>
+</body>
+
 </html>
