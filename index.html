@@ -8,6 +8,8 @@
   <!-- Font-awesome 3.2.1 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -16,48 +18,54 @@
       <div class="aside__wrapper2">
         <h2 class="aside__header">Mai Hoàng <span class="sub-title">Studio</span></h2>
         <div class="aside__link-group" id="aside__link-group">
-          <a id="banner-link" href="#banner" class="aside__link sidebar--active js-aside__link">In House Studio
+          <a id="in-house-link" href="#in-house" class="aside__link sidebar--active js-aside__link">In House Studio
           </a>
-          <a id="about-link" href="#about" class="aside__link js-aside__link">Santorini Studio</a>
-          <a id="service-link" href="#service" class="aside__link js-aside__link">5 Garden Studio</a>
-          <a id="portfolio-link" href="#portfolio" class="aside__link js-aside__link">Villa Rose Studio</a>
-          <a id="contact-link" href="#contact" class="aside__link js-aside__link">Ocean Park 3 Studio</a>
+          <a id="santorini-link" href="#santorini" class="aside__link js-aside__link">Santorini Studio</a>
+          <a id="5-garden-link" href="#5-garden" class="aside__link js-aside__link">5 Garden Studio</a>
+          <a id="villa-rose-link" href="#villa-rose" class="aside__link js-aside__link">Villa Rose Studio</a>
+          <a id="ocean-park-3-link" href="#ocean-park-3" class="aside__link js-aside__link">Ocean Park 3 Studio</a>
         </div>
       </div>
     </div>
   </aside>
 
-  <div class="wrapper">
-    <section class="header" id="header">
-      <div class="menu-icon js-side-bar-toggle">
-        <span class="line line-top"></span>
-        <span class="line line-bottom"></span>
-      </div>
-    </section>
-    <div class="background">
-      <div class="vignette-cur"></div>
-      <div class="shadow-cur"></div>
-      <div class="content">
-        <p class="content_title-1">Mai Hoàng</p>
-        <p class="content_title-2">Studio</p>
-      </div>
-      <div class="navigation">
-        <span class="navigation_title">01</span>
-        <div class="progress-bar">
-          <div class="progress"></div>
-        </div>
-        <span class="navigation_title">04</span>
-      </div>
+  <section class="header" id="header">
+    <div class="menu-icon js-side-bar-toggle">
+      <span class="line line-top"></span>
+      <span class="line line-bottom"></span>
     </div>
-    <div class="seemore">
-      <button class="btn btn-seemore">Xem thêm</button>
+  </section>
+  <div class="swiper background">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide-1"></div>
+      <div class="swiper-slide slide-2"></div>
+      <div class="swiper-slide slide-3"></div>
+      <div class="swiper-slide slide-4"></div>
+      <div class="swiper-slide slide-5"></div>
     </div>
+    <div class="vignette-cur"></div>
+    <div class="shadow-cur"></div>
+    <div class="content">
+      <p class="content_title-1">Mai Hoàng</p>
+      <p class="content_title-2">Studio</p>
+    </div>
+    <div class="navigation">
+      <span class="navigation_title js-navigation_title">01</span>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      <span class="navigation_title">05</span>
+    </div>
+  </div>
+  <div class="seemore">
+    <button class="btn btn-seemore">Xem thêm</button>
+  </div>
   </div>
 
   <div class="section-studio">
     <div class="section-studio_title">
       <span class="section-studio_title-line"> </span>
-      <div class="section-studio_subtitle">
+      <div class="section-studio_subtitle" id="in-house">
         <h4 class="section-studio_subtitle1">01</h4>
         <h2 class="section-studio_subtitle2">In House Studio</h2>
       </div>
@@ -130,6 +138,7 @@
     <p class="footer__content">© 2024 All rights reserved</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="main.js"></script>
 </body>
 
