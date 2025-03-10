@@ -78,3 +78,13 @@ swiper.on('slideChange', function () {
     const navigationtitle = document.querySelector('.js-navigation_title');
     navigationtitle.textContent = `0${swiper.realIndex + 1}`
 });
+
+    options = {
+	"cursorOuter": "circle",
+	"hoverEffect": "circle-move",
+	"hoverItemMove": false,
+	"defaultCursor": false,
+	"outerWidth": 30,
+	"outerHeight": 30
+      };
+    magicMouse(options);
