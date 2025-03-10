@@ -125,18 +125,18 @@ mainTl
     .add(scaleTl, "-=1.25")
     .add(() => {
         document
-            .querySelectorAll(".img:not(.main)")
+            .querySelectorAll(".intro_img:not(.main)")
             .forEach((img) => img.remove());
 
         const state = Flip.getState(".main");
-        const imagesContainer = document.querySelector(".images");
+        const imagesContainer = document.querySelector(".intro_imgs");
 
         imagesContainer.classList.add("stacked-container");
 
         document.querySelectorAll(".main").forEach((img, i) => {
             img.classList.add("stacked");
             img.style.order = i;
-            gsap.set(".img.stacked", {
+            gsap.set(".intro_img.stacked", {
                 clearProps:
                     "transform, top, left"
             });

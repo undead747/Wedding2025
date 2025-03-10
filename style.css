@@ -154,7 +154,7 @@ body.no-scroll {
     display: block;
 }
 
-.intro_img.stacked-container {
+.intro_imgs.stacked-container {
     position: fixed;
     left: 2em;
     bottom: 2em;
