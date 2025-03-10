@@ -115,6 +115,12 @@ body.no-scroll {
     transition: 0.2s linear;
 }
 
+@media only screen and (min-width: 1200px){
+    .header{
+        display: none;
+    }
+}
+
 .header--scroll-active {
     background-color: rgba(41, 41, 41, 1);
     transition: 0.5s linear;
@@ -192,7 +198,7 @@ body.no-scroll {
     transition: 0.4s ease-in-out;
 }
 
-.aside__icon1{
+.aside__icon1 {
     position: absolute;
     z-index: 1;
     width: 25%;
@@ -201,7 +207,7 @@ body.no-scroll {
     transform: rotate(165deg);
 }
 
-.aside__icon2{
+.aside__icon2 {
     position: absolute;
     z-index: 1;
     width: 40%;
@@ -209,12 +215,12 @@ body.no-scroll {
     right: -20px;
 }
 
-.aside__icon3{
+.aside__icon3 {
     position: absolute;
     z-index: 1;
     width: 40%;
-    bottom: -5px;
-    left: -20px;
+    bottom: -9px;
+    left: -16px;
     transform: rotate(100deg);
 }
 
@@ -283,7 +289,7 @@ body.no-scroll {
     font-size: 18px;
 }
 
-.aside__wrapper-outer1{
+.aside__wrapper-outer1 {
     background: linear-gradient(160deg, #FCF5A4 0%, #876726 100%);
     padding: 2px;
     width: 100%;
@@ -291,7 +297,7 @@ body.no-scroll {
     position: relative;
 }
 
-.aside__wrapper-outer2{
+.aside__wrapper-outer2 {
     background: linear-gradient(160deg, #FCF5A4 0%, #876726 100%);
     padding: 6px;
     width: 100%;
@@ -305,7 +311,7 @@ body.no-scroll {
     height: 100%;
 }
 
-.aside__wrapper-inner2{
+.aside__wrapper-inner2 {
     background: linear-gradient(to bottom, #f5ebe0, #d4cabe);
     padding: 20px;
     width: 100%;
@@ -313,7 +319,7 @@ body.no-scroll {
 }
 
 
-.aside__wrapper-outer1::after{
+.aside__wrapper-outer1::after {
     display: block;
     content: "";
     position: absolute;
@@ -757,7 +763,7 @@ body.no-scroll {
 
 @media only screen and (min-width: 1200px) {
     .section-studio_title {
-       margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 }
 
@@ -906,53 +912,124 @@ body.no-scroll {
         display: block;
     }
 
-    .section-studio_gallery {
-        grid-template-columns: repeat(15, 1fr); 
-        grid-template-rows: repeat(8, 1fr); 
+    .section-studio_gallery_item5,
+    .section-studio_gallery_item6,
+    .section-studio_gallery_item7 {
+        display: flex;
+        justify-content: center;
     }
 
-    .section-studio_gallery_item{
+    .section-studio_gallery_item5 .section-studio_gallery_item,
+    .section-studio_gallery_item6 .section-studio_gallery_item,
+    .section-studio_gallery_item7 .section-studio_gallery_item {
+        position: relative;
+        width: 80%;
+        height: 100%;
+    }
+
+    .section-studio_gallery_item5 .section-studio_gallery_item,
+    .section-studio_gallery_item7 .section-studio_gallery_item{
+        background-color: #222121;
+    }
+
+    .section-studio_gallery_item6 .section-studio_gallery_item{
+        background-color: #FFFFFF;
+    }
+
+    .section-studio_gallery_item5 .section-studio_gallery_item img,
+    .section-studio_gallery_item6 .section-studio_gallery_item img,
+    .section-studio_gallery_item7 .section-studio_gallery_item img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 50%;
     }
 
-    .section-studio_gallery_item1{
+    .section-studio_gallery_item5 .section-studio_gallery_item img,
+    .section-studio_gallery_item7 .section-studio_gallery_item img{
+        width: 70%;
+    }
+
+    .section-studio_gallery {
+        grid-template-columns: repeat(15, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    .section-studio_gallery_item {
+        width: 50%;
+        border: 6px solid #715244;
+    }
+
+    .section-studio_gallery_item1 {
         grid-column: 1 / 6;
         grid-row: 1 / 5;
     }
 
-    .section-studio_gallery_item2{
+    .section-studio_gallery_item1 img {
+        width: 85%;
+        margin-left: 35px;
+    }
+
+    .section-studio_gallery_item2 {
         grid-column: 6 / 12;
         grid-row: 1 / 7;
     }
-    
-    .section-studio_gallery_item3{
+
+    .section-studio_gallery_item2 img {
+        width: 80%;
+    }
+
+    .section-studio_gallery_item3 {
         grid-column: 12 / 16;
         grid-row: 1 / 5;
     }
-    
-    .section-studio_gallery_item4{
-        grid-column: 12 / 16;
-        grid-row: 5 / 9;
+
+    .section-studio_gallery_item3 img {
+        width: 65%;
     }
 
-    .section-studio_gallery_item5{
+    .section-studio_gallery_item4 {
+        grid-column: 12 / 16;
+        grid-row: 5 / 9;
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-studio_gallery_item4 img {
+        width: 65%;
+    }
+
+    .section-studio_gallery_item5 {
         grid-column: 10 / 12;
         grid-row: 7 / 9;
     }
-    
-    .section-studio_gallery_item6{
+
+    .section-studio_gallery_item5 img {}
+
+    .section-studio_gallery_item6 {
         grid-column: 8 / 10;
         grid-row: 7 / 9;
     }
-    
-    .section-studio_gallery_item7{
+
+    .section-studio_gallery_item6 img {}
+
+    .section-studio_gallery_item7 {
         grid-column: 6 / 8;
         grid-row: 7 / 9;
     }
-    
-    .section-studio_gallery_item8{
+
+    .section-studio_gallery_item7 img {}
+
+    .section-studio_gallery_item8 {
         grid-column: 1 / 6;
         grid-row: 5 / 9;
+        text-align: left;
+        display: flex;
+    }
+
+    .section-studio_gallery_item8 img {
+        margin-left: 42px;
     }
 }
 
@@ -1006,7 +1083,7 @@ body.no-scroll {
         width: auto;
         text-align: justify;
         border-radius: 5px;
-        border: 4px solid #715244;
+        border: 6px solid #715244;
         box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
@@ -1019,7 +1096,7 @@ body.no-scroll {
     }
 
     .section-studio__pc-outer1 {
-        background: linear-gradient(180deg, #FCF5A4 0%, #876726 100%);
+        background: linear-gradient(160deg, #FCF5A4 0%, #876726 100%);
         padding: 2px;
     }
 
@@ -1029,13 +1106,13 @@ body.no-scroll {
     }
 
     .section-studio__pc-outer2 {
-        background: linear-gradient(180deg, #FCF5A4 0%, #876726 100%);
+        background: linear-gradient(160deg, #FCF5A4 0%, #876726 100%);
         padding: 7px;
     }
 
-    .section-studio__pc-inner2{
-        padding: 1px;
-    background-color: #e4e2d6;
+    .section-studio__pc-inner2 {
+        padding: 40px 1px 1px 1px;
+        background-color: #e4e2d6;
     }
 }
 
