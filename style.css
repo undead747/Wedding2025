@@ -484,6 +484,7 @@ body.no-scroll {
     align-items: end;
     gap: 10px;
     cursor: pointer;
+    opacity: 0;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -869,6 +870,7 @@ body.no-scroll {
     background: linear-gradient(90deg, #9D7757 0%, #B48964 50%, #9D7757 100%);
     transition: background 0.3s;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    opacity: 0;
 }
 
 .btn-seemore:hover {}

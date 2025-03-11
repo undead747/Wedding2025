@@ -1,4 +1,6 @@
 const SideBarModule = (function () {
+    window.scrollTo(0, 0);
+
     const closeBtns = document.querySelector('.js-side-bar-toggle');
     const sideBar = document.getElementById('aside');
     const sideBarLinks = document.querySelectorAll('.js-aside__link');
@@ -57,23 +59,6 @@ const HeaderModule = (function () {
     });
 })();
 
-// var swiper = new Swiper(".background", {
-//     loop: true,
-//     autoplay: {
-//         delay: 5000,
-//         disableOnInteraction: false,
-//     },
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//     },
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//     },
-//     effect: "fade",
-// });
-
 CustomEase.create("hop", "M0,0 C0.355,0.022 0.448,0.079 0.5,0.5 0.542,0.846 0.615,1 1,1 ");
 CustomEase.create("hop2", "M0,0 C0.078,0.617 0.114,0.716 0.255,0.828 0.373,0.922 0.561,1 1,1 ");
 
@@ -122,7 +107,7 @@ images.forEach((img, index) => {
 
 mainTl
     .add(revealerTl)
-    .add(scaleTl, "-=1.5")
+    .add(scaleTl, "-=2")
     .add(() => {
         document
             .querySelectorAll(".intro_img:not(.main)")
@@ -160,6 +145,31 @@ mainTl
                 document.querySelector(".js-intro_vignette-cur").style.display = "none";
             }
         });
+
+        setTimeout(function(){
+            gsap.to(".js-content_title-1 h1, .js-content_title-2 h1", {
+                y: 0,
+                duration: 3,
+                ease: "hop2",
+                stagger: 0.1,
+                delav: 1.25
+            })
+            
+            gsap.to(".btn-seemore", {
+                opacity: 1,
+                duration: 1
+            })
+
+            gsap.to(".menu-icon", {
+                opacity: 1,
+                duration: 1
+            })
+
+            gsap.to(".navigation", {
+                opacity: 1,
+                duration: 1
+            })
+        }, 1700)
 
         setTimeout(function () {
             const imgs = document.querySelectorAll('.intro_img');
@@ -225,12 +235,6 @@ mainTl
                 swiper.slidePrev();
             }
         });
-    }).to(".js-content_title-1 h1, .js-content_title-2 h1", {
-        y: 0,
-        duration: 3,
-        ease: "hop2",
-        stagger: 0.1,
-        delav: 1.25
     })
 
 options = {
