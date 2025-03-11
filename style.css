@@ -689,7 +689,9 @@ body.no-scroll {
     }
 }
 
-.content_title-1 {
+.content
+
+.content_title-1 h1{
     font-size: 47px;
     font-weight: var(--regular);
     margin: 0;
@@ -699,7 +701,7 @@ body.no-scroll {
     display: none;
 }
 
-.content_title-2 {
+.content_title-2 h1{
     font-size: 30px;
     font-weight: var(--regular);
     margin: 0;
@@ -711,6 +713,22 @@ body.no-scroll {
 
 .content_title-3 {
     display: none;
+}
+
+.content_title-1,
+.content_title-2{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.content_title-1 h1,
+.content_title-2 h1{
+    position: relative;
+    will-change: transform;
+}
+
+.content_title-1 h1,
+.content_title-2 h1{
+    transform: translateY(100%);
 }
 
 @media only screen and (min-width: 1200px) {

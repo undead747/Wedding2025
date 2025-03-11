@@ -225,7 +225,7 @@ mainTl
                 swiper.slidePrev();
             }
         });
-    }).to(".js-content_title-1, .js-content_title-2", {
+    }).to(".js-content_title-1 h1, .js-content_title-2 h1", {
         y: 0,
         duration: 3,
         ease: "hop2",
