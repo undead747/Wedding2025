@@ -123,7 +123,7 @@ mainTl
             img.style.order = i;
             gsap.set(".intro_img.stacked", {
                 clearProps:
-                    "transform, bottom, left"
+                    "transform, top, left"
             });
         });
 
@@ -146,7 +146,7 @@ mainTl
             }
         });
 
-        setTimeout(function(){
+        setTimeout(function () {
             gsap.to(".js-content_title-1 h1, .js-content_title-2 h1", {
                 y: 0,
                 duration: 3,
@@ -154,7 +154,7 @@ mainTl
                 stagger: 0.1,
                 delav: 1.25
             })
-            
+
             gsap.to(".btn-seemore", {
                 opacity: 1,
                 duration: 1
