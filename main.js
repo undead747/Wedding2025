@@ -161,6 +161,13 @@ mainTl
             }
         });
 
+        setTimeout(function () {
+            const imgs = document.querySelectorAll('.intro_img');
+
+            imgs.forEach(img => img.classList.add('dec'));
+
+        }, 2500)
+
         var swiper = new Swiper(".background", {
             loop: true,
             autoplay: {
@@ -180,8 +187,50 @@ mainTl
 
         swiper.on('slideChange', function () {
             const navigationtitle = document.querySelector('.js-navigation_title');
-            navigationtitle.textContent = `0${swiper.realIndex + 1}`
+            const currIdx = swiper.realIndex + 1;
+            navigationtitle.textContent = `0${currIdx}`
+
+            const images = document.querySelectorAll('.intro_img');
+
+            images.forEach(img => img.classList.remove('active'));
+
+            images.forEach(img => {
+                if (parseInt(img.getAttribute('data-slide')) === currIdx) {
+                    img.classList.add('active');
+                }
+            });
         });
+
+        const introImages = document.querySelectorAll('.intro_img');
+        introImages.forEach((img) => {
+            img.addEventListener('click', () => {
+                const slideIndex = img.getAttribute('data-slide');
+                swiper.slideTo(parseInt(slideIndex) - 1);
+
+                introImages.forEach((item) => item.classList.remove('active'));
+
+                img.classList.add('active');
+            });
+        });
+
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.querySelector('.progress');
+
+        progressBar.addEventListener('click', (e) => {
+            const progressRect = progress.getBoundingClientRect();
+
+            if (e.clientX < progressRect.left || e.clientX > progressRect.right) {
+                swiper.slideNext();
+            } else {
+                swiper.slidePrev();
+            }
+        });
+    }).to(".js-content_title-1, .js-content_title-2", {
+        y: 0,
+        duration: 3,
+        ease: "hop2",
+        stagger: 0.1,
+        delav: 1.25
     })
 
 options = {
