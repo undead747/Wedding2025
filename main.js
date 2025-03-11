@@ -116,13 +116,13 @@ images.forEach((img, index) => {
         duration: 1,
         ease: "power3.out"
     },
-        ">-0.5"
+        ">-0.4"
     )
 })
 
 mainTl
     .add(revealerTl)
-    .add(scaleTl, "-=1.25")
+    .add(scaleTl, "-=1.5")
     .add(() => {
         document
             .querySelectorAll(".intro_img:not(.main)")
@@ -138,7 +138,7 @@ mainTl
             img.style.order = i;
             gsap.set(".intro_img.stacked", {
                 clearProps:
-                    "transform, top, left"
+                    "transform, bottom, left"
             });
         });
 
@@ -150,12 +150,39 @@ mainTl
                 amount: -0.3,
             }
         });
-    })
+    }).add(() => {
+        const curtain = document.querySelector(".curtains");
+        curtain.style.display = "none";
+        gsap.to(".js-intro_vignette-cur", {
+            opacity: 0,
+            duration: 1.5,
+            onComplete: () => {
+                document.querySelector(".js-intro_vignette-cur").style.display = "none";
+            }
+        });
 
-// swiper.on('slideChange', function () {
-//     const navigationtitle = document.querySelector('.js-navigation_title');
-//     navigationtitle.textContent = `0${swiper.realIndex + 1}`
-// });
+        var swiper = new Swiper(".background", {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            effect: "fade",
+        });
+
+        swiper.on('slideChange', function () {
+            const navigationtitle = document.querySelector('.js-navigation_title');
+            navigationtitle.textContent = `0${swiper.realIndex + 1}`
+        });
+    })
 
 options = {
     "hoverEffect": "circle-move",
