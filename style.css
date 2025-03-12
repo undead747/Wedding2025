@@ -42,6 +42,14 @@
     --z-index-level-5: 5;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+body #magicPointer{
+    z-index: 9999;
+}
+
 *,
 *::before,
 *::after {
