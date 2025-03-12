@@ -59,6 +59,22 @@ const HeaderModule = (function () {
     });
 })();
 
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".section-studio_gallery_item").forEach((item) => {
+    gsap.from(item, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 80%", // Kích hoạt khi 80% ảnh xuất hiện trong viewport
+        toggleActions: "play none none none",
+      }
+    });
+  });
+
 CustomEase.create("hop", "M0,0 C0.355,0.022 0.448,0.079 0.5,0.5 0.542,0.846 0.615,1 1,1 ");
 CustomEase.create("hop2", "M0,0 C0.078,0.617 0.114,0.716 0.255,0.828 0.373,0.922 0.561,1 1,1 ");
 
