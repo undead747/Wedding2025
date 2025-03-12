@@ -147,7 +147,7 @@ mainTl
         });
 
         setTimeout(function () {
-            gsap.to(".js-content_title-1 h1, .js-content_title-2 h1", {
+            gsap.to(".js-content_title-1 h1, .js-content_title-2 h1, .js-content_title-1--pc h1, .js-content_title-2--pc h1", {
                 y: 0,
                 duration: 3,
                 ease: "hop2",
