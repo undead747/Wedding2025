@@ -205,7 +205,6 @@ body.no-scroll {
     .intro_img .img5 {
         background: url('/images/ocean\ park\ 3-2.png');
     }
-
 }
 
 .intro_img .img {
@@ -231,13 +230,13 @@ body.no-scroll {
     display: flex;
     justify-content: center;
     gap: 1em;
-    will-change: transform;
+    /* will-change: transform; */
 }
 
 @media only screen and (min-width: 1200px) {
     .intro_imgs.stacked-container {
         flex-direction: column;
-        top: 25%;
+        top: calc(50% - 160px);
         left: calc(100% - 120px);
         width: 10%;
     }
@@ -251,7 +250,7 @@ body.no-scroll {
     top: auto;
     left: auto;
     opacity: 1;
-    will-change: transform;
+    /* will-change: transform; */
     position: relative;
 }
 
@@ -343,10 +342,15 @@ body.no-scroll {
     margin: 0;
 }
 
+.header-pc__left{
+    opacity: 0;
+}
+
 .header-pc__right {
     display: flex;
     align-items: center;
     gap: 15px;
+    opacity: 0;
 }
 
 .header-pc__center {
@@ -360,6 +364,7 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    opacity: 0;
 }
 
 .header-pc__center>* {
@@ -886,34 +891,14 @@ body.no-scroll {
     display: none;
 }
 
-.navigation-wrapper__right {
-    display: none;
-}
-
 .navigation-wrapper__left h4,
 .navigation-wrapper__right h4{
     color: var(--pure-white);
     font-size: 18px;
     font-weight: var(--medium);
     font-family: var(--font-heading);
+    opacity: 0;
 }
-
-.navigation-wrapper__left,
-.navigation-wrapper__right{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.navigation-wrapper__left h1,
-.navigation-wrapper__right h1{
-    position: relative;
-    will-change: transform;
-}
-
-.navigation-wrapper__left h1,
-.navigation-wrapper__right h1{
-    transform: translateY(100%);
-}
-
 
 @media only screen and (min-width: 1200px) {
     .navigation-wrapper {
@@ -923,6 +908,7 @@ body.no-scroll {
 
     .navigation {
         width: 25%;
+        opacity: 0;
     }
 
     .navigation-wrapper__left {
@@ -1330,7 +1316,7 @@ body.no-scroll {
         text-align: justify;
         border-radius: 5px;
         border: 6px solid #715244;
-        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     .section-studio_content_text-outer1 {

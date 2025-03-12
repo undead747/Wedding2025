@@ -69,7 +69,7 @@ gsap.utils.toArray(".section-studio_gallery_item").forEach((item) => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: item,
-        start: "top 80%", // Kích hoạt khi 80% ảnh xuất hiện trong viewport
+        start: "top 80%", 
         toggleActions: "play none none none",
       }
     });
@@ -136,7 +136,7 @@ mainTl
 
         document.querySelectorAll(".main").forEach((img, i) => {
             img.classList.add("stacked");
-            img.style.order = i;
+            img.style.order = i + 1;
             gsap.set(".intro_img.stacked", {
                 clearProps:
                     "transform, top, left"
@@ -144,7 +144,7 @@ mainTl
         });
 
         return Flip.from(state, {
-            duration: 2,
+            duration: 1,
             ease: "hop",
             absolute: true,
             stagger: {
@@ -171,17 +171,7 @@ mainTl
                 delav: 1.25
             })
 
-            gsap.to(".btn-seemore", {
-                opacity: 1,
-                duration: 1
-            })
-
-            gsap.to(".menu-icon", {
-                opacity: 1,
-                duration: 1
-            })
-
-            gsap.to(".navigation", {
+            gsap.to(".btn-seemore, .menu-icon, .navigation, .header-pc__center, .header-pc__left, .header-pc__right, .navigation-wrapper__left h4, .navigation-wrapper__right h4", {
                 opacity: 1,
                 duration: 1
             })
@@ -191,7 +181,7 @@ mainTl
             const imgs = document.querySelectorAll('.intro_img');
 
             imgs.forEach(img => img.classList.add('dec'));
-
+            document.querySelector(".intro_img")?.classList.add("active");
         }, 2500)
 
         var swiper = new Swiper(".background", {
