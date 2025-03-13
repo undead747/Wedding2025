@@ -82,7 +82,7 @@ async function initialize() {
     const typingTextElement = document.getElementById('typing-text');
     const texts = [
         'Đang chuẩn bị mọi thứ cho bạn,',
-        'Chúng tôi sẽ mang lại những trải nghiệm tuyệt vời!',
+        'Xin hãy chờ một chút ạ (｡•̀ᴗ•́｡)',
     ];
     let currentIndex = 0;
 
