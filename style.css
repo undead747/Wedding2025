@@ -151,10 +151,10 @@ body.intro{
       width: 0;
     }
     50% {
-      width: 275px;
+      width: 300px;
     }
     100% {
-        width: 275px;
+        width: 300px;
       }
   }
   
@@ -890,6 +890,7 @@ body.intro{
 .content_title-1--pc,
 .content_title-2--pc {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 1;
 }
 
 .content_title-1 h1,
