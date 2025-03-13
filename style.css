@@ -138,6 +138,7 @@ body.intro{
 
 .pre-load_typing-text {
     width: 0; /* Khởi tạo chiều rộng là 0 */
+    height: 20px;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -150,10 +151,10 @@ body.intro{
       width: 0;
     }
     50% {
-      width: 267px;
+      width: 275px;
     }
     100% {
-        width: 267px;
+        width: 275px;
       }
   }
   
