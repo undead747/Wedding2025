@@ -59,195 +59,220 @@ const HeaderModule = (function () {
     });
 })();
 
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.utils.toArray(".section-studio_gallery_item").forEach((item) => {
-    gsap.from(item, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: item,
-        start: "top 80%", 
-        toggleActions: "play none none none",
-      }
+async function loadData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Dữ liệu đã tải xong!");
+            resolve();
+        }, 100000);
     });
-  });
+}
 
-CustomEase.create("hop", "M0,0 C0.355,0.022 0.448,0.079 0.5,0.5 0.542,0.846 0.615,1 1,1 ");
-CustomEase.create("hop2", "M0,0 C0.078,0.617 0.114,0.716 0.255,0.828 0.373,0.922 0.561,1 1,1 ");
+async function initialize() {
+    document.body.classList.toggle("intro");
 
-const mainTl = gsap.timeline();
-const revealerTl = gsap.timeline();
-const scaleTl = gsap.timeline();
+    var animation = lottie.loadAnimation({
+        container: document.getElementById('lottie-container'), // The div where animation will appear
+        renderer: 'svg', // or 'canvas' or 'html'
+        loop: true, // true for infinite loop
+        autoplay: true, // auto play on load
+        path: 'heart-balloons.json' // Path to your JSON file
+    });
 
-revealerTl.to(".curtain-top", {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-    duration: 1.5,
-    ease: "hop"
-}).to(".curtain-bottom", {
-    clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    duration: 1.5,
-    ease: "hop"
-}, "<");
+    const typingTextElement = document.getElementById('typing-text');
+    const texts = [
+        'Đang chuẩn bị mọi thứ cho bạn,',
+        'Chúng tôi sẽ mang lại những trải nghiệm tuyệt vời!',
+    ];
+    let currentIndex = 0;
 
-revealerTl.to(".r-1", {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-    duration: 1.5,
-    ease: "hop"
-}).to(".r-2", {
-    clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    duration: 1.5,
-    ease: "hop"
-}, "<");
+    function changeText() {
+        typingTextElement.textContent = ''; // Clear current text
+        typingTextElement.style.animation = 'none'; // Reset animation
 
-scaleTl.to(" .intro_img:first-child", {
-    scale: 1,
-    duration: 2,
-    ease: "power4.inOut"
-});
+        // Change text after a delay
+        setTimeout(() => {
+            typingTextElement.textContent = texts[currentIndex]; // Set new text
+            // Trigger animation again
+            typingTextElement.style.animation = 'typing 4s steps(22) 1s forwards, blink 0.5s step-end infinite alternate';
+        }, 1000); // Delay before changing text (1 second)
+    }
 
-const images = document.querySelectorAll(".intro_img:not(:first-child)");
+    function loopText() {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % texts.length; // Loop through texts
+            changeText();
+        }, 5000); // Wait for 5 seconds before changing text
+    }
 
-images.forEach((img, index) => {
-    scaleTl.to(img, {
-        display: "block",
-        scale: 1,
-        duration: 1,
-        ease: "power3.out"
-    },
-        ">-0.4"
-    )
-})
+    // Initialize the loop
+    loopText();
 
-mainTl
-    .add(revealerTl)
-    .add(scaleTl, "-=2")
-    .add(() => {
-        document
-            .querySelectorAll(".intro_img:not(.main)")
-            .forEach((img) => img.remove());
+    await loadData();
+    runGSAPAnimations();
+    document.body.classList.toggle("intro");
+}
 
-        const state = Flip.getState(".main");
-        const imagesContainer = document.querySelector(".intro_imgs");
-
-        imagesContainer.classList.add("stacked-container");
-
-        document.querySelectorAll(".main").forEach((img, i) => {
-            img.classList.add("stacked");
-            img.style.order = i + 1;
-            gsap.set(".intro_img.stacked", {
-                clearProps:
-                    "transform, top, left"
-            });
-        });
-
-        return Flip.from(state, {
-            duration: 1,
-            ease: "hop",
-            absolute: true,
-            stagger: {
-                amount: -0.3,
-            }
-        });
-    }).add(() => {
-        const curtain = document.querySelector(".curtains");
-        curtain.style.display = "none";
-        gsap.to(".js-intro_vignette-cur", {
+function runGSAPAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".section-studio_gallery_item").forEach((item) => {
+        gsap.from(item, {
             opacity: 0,
-            duration: 1.5,
-            onComplete: () => {
-                document.querySelector(".js-intro_vignette-cur").style.display = "none";
+            y: 50,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: item,
+                start: "top 90%",
+                toggleActions: "play none none none",
             }
         });
+    });
 
-        setTimeout(function () {
-            gsap.to(".js-content_title-1 h1, .js-content_title-2 h1, .js-content_title-1--pc h1, .js-content_title-2--pc h1", {
-                y: 0,
-                duration: 3,
-                ease: "hop2",
-                stagger: 0.1,
-                delav: 1.25
-            })
+    CustomEase.create("hop", "M0,0 C0.355,0.022 0.448,0.079 0.5,0.5 0.542,0.846 0.615,1 1,1 ");
+    CustomEase.create("hop2", "M0,0 C0.078,0.617 0.114,0.716 0.255,0.828 0.373,0.922 0.561,1 1,1 ");
 
-            gsap.to(".btn-seemore, .menu-icon, .navigation, .header-pc__center, .header-pc__left, .header-pc__right, .navigation-wrapper__left h4, .navigation-wrapper__right h4", {
-                opacity: 1,
-                duration: 1
-            })
-        }, 1700)
+    const mainTl = gsap.timeline();
+    const revealerTl = gsap.timeline();
+    const scaleTl = gsap.timeline();
 
-        setTimeout(function () {
-            const imgs = document.querySelectorAll('.intro_img');
+    revealerTl.to(".curtain-top", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        duration: 1.5,
+        ease: "hop"
+    }).to(".curtain-bottom", {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        ease: "hop"
+    }, "<");
 
-            imgs.forEach(img => img.classList.add('dec'));
-            document.querySelector(".intro_img")?.classList.add("active");
-        }, 2500)
+    revealerTl.to(".r-1", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        duration: 1.5,
+        ease: "hop"
+    }).to(".r-2", {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        ease: "hop"
+    }, "<");
 
-        var swiper = new Swiper(".background", {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            effect: "fade",
-        });
+    scaleTl.to(".intro_img:first-child", {
+        scale: 1,
+        duration: 2,
+        ease: "power4.inOut"
+    });
 
-        swiper.on('slideChange', function () {
-            const navigationtitle = document.querySelector('.js-navigation_title');
-            const currIdx = swiper.realIndex + 1;
-            navigationtitle.textContent = `0${currIdx}`
+    const images = document.querySelectorAll(".intro_img:not(:first-child)");
 
-            const images = document.querySelectorAll('.intro_img');
+    images.forEach((img, index) => {
+        scaleTl.to(img, {
+            display: "block",
+            scale: 1,
+            duration: 1,
+            ease: "power3.out"
+        }, ">-0.4");
+    });
 
-            images.forEach(img => img.classList.remove('active'));
+    mainTl.add(revealerTl)
+        .add(scaleTl, "-=2")
+        .add(() => {
+            document.querySelectorAll(".intro_img:not(.main)").forEach((img) => img.remove());
 
-            images.forEach(img => {
-                if (parseInt(img.getAttribute('data-slide')) === currIdx) {
+            const state = Flip.getState(".main");
+            const imagesContainer = document.querySelector(".intro_imgs");
+
+            imagesContainer.classList.add("stacked-container");
+
+            document.querySelectorAll(".main").forEach((img, i) => {
+                img.classList.add("stacked");
+                img.style.order = i + 1;
+                gsap.set(".intro_img.stacked", {
+                    clearProps: "transform, top, left"
+                });
+            });
+
+            return Flip.from(state, {
+                duration: 1,
+                ease: "hop",
+                absolute: true,
+                stagger: { amount: -0.3 }
+            });
+        }).add(() => {
+            const curtain = document.querySelector(".curtains");
+            curtain.style.display = "none";
+            gsap.to(".js-intro_vignette-cur", {
+                opacity: 0,
+                duration: 1.5,
+                onComplete: () => {
+                    document.querySelector(".js-intro_vignette-cur").style.display = "none";
+                }
+            });
+
+            setTimeout(() => {
+                gsap.to(".btn-seemore, .menu-icon, .navigation", {
+                    opacity: 1,
+                    duration: 1,
+                    delay: 1.5
+                });
+            }, 1500);
+
+            setTimeout(() => {
+                document.querySelectorAll('.intro_img').forEach(img => img.classList.add('dec'));
+                document.querySelector(".intro_img")?.classList.add("active");
+            }, 2500);
+
+            var swiper = new Swiper(".background", {
+                loop: true,
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                pagination: { el: ".swiper-pagination", clickable: true },
+                effect: "fade",
+            });
+
+            swiper.on('slideChange', function () {
+                const navigationTitle = document.querySelector('.js-navigation_title');
+                const currIdx = swiper.realIndex + 1;
+                navigationTitle.textContent = `0${currIdx}`;
+
+                document.querySelectorAll('.intro_img').forEach(img => img.classList.remove('active'));
+                document.querySelectorAll('.intro_img').forEach(img => {
+                    if (parseInt(img.getAttribute('data-slide')) === currIdx) {
+                        img.classList.add('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.intro_img').forEach((img) => {
+                img.addEventListener('click', () => {
+                    const slideIndex = img.getAttribute('data-slide');
+                    swiper.slideTo(parseInt(slideIndex) - 1);
+                    document.querySelectorAll('.intro_img').forEach((item) => item.classList.remove('active'));
                     img.classList.add('active');
+                });
+            });
+
+            const progressBar = document.querySelector('.progress-bar');
+            const progress = document.querySelector('.progress');
+
+            progressBar.addEventListener('click', (e) => {
+                const progressRect = progress.getBoundingClientRect();
+                if (e.clientX < progressRect.left || e.clientX > progressRect.right) {
+                    swiper.slideNext();
+                } else {
+                    swiper.slidePrev();
                 }
             });
         });
 
-        const introImages = document.querySelectorAll('.intro_img');
-        introImages.forEach((img) => {
-            img.addEventListener('click', () => {
-                const slideIndex = img.getAttribute('data-slide');
-                swiper.slideTo(parseInt(slideIndex) - 1);
+    options = {
+        "hoverEffect": "circle-move",
+        "hoverItemMove": false,
+        "defaultCursor": false,
+        "outerWidth": 30,
+        "outerHeight": 30
+    };
+    magicMouse(options);
+}
 
-                introImages.forEach((item) => item.classList.remove('active'));
-
-                img.classList.add('active');
-            });
-        });
-
-        const progressBar = document.querySelector('.progress-bar');
-        const progress = document.querySelector('.progress');
-
-        progressBar.addEventListener('click', (e) => {
-            const progressRect = progress.getBoundingClientRect();
-
-            if (e.clientX < progressRect.left || e.clientX > progressRect.right) {
-                swiper.slideNext();
-            } else {
-                swiper.slidePrev();
-            }
-        });
-    })
-
-options = {
-    "hoverEffect": "circle-move",
-    "hoverItemMove": false,
-    "defaultCursor": false,
-    "outerWidth": 30,
-    "outerHeight": 30
-};
-magicMouse(options);
+// Gọi hàm initialize để bắt đầu quá trình tải dữ liệu và chạy GSAP sau khi xong
+initialize();
