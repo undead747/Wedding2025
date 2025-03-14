@@ -61,6 +61,10 @@ const HeaderModule = (function () {
     });
 })();
 
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
 function imagesLoaded() {
     return new Promise(resolve => {
         const elementsWithBg = document.querySelectorAll('.intro_img .img');
@@ -134,21 +138,37 @@ async function initialize() {
     }
 
     // Initialize the loop
+    document.body.classList.toggle("intro");
     loopText();
-
     await imagesLoaded();
+    await delay(6000);
     clearInterval(intervalId);
     document.getElementById("pre-load").style.display = "none";
     runGSAPAnimations();
+    document.body.classList.toggle("intro");
 }
 
 function runGSAPAnimations() {
     document.body.classList.toggle("intro");
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".section-studio_gallery_item").forEach((item) => {
+    gsap.utils.toArray(".section-studio_gallery_item, .section-studio_santorini-icon-1, .section-studio_santorini-icon-2, .section-studio_5garden-icon-1, .section-studio_villarose-icon-1, .section-studio_oceanpark3-icon-1, .section-studio_oceanpark3-icon-2 ").forEach((item) => {
         gsap.from(item, {
             opacity: 0,
             y: 50,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: item,
+                start: "top 90%",
+                toggleActions: "play none none none",
+            },
+        });
+    });
+
+    gsap.utils.toArray(".section-studio_5garden-icon-2, .section-studio_villarose-icon-2").forEach((item) => {
+        gsap.from(item, {
+            opacity: 0,
+            y: -50,
             duration: 1,
             ease: "power2.out",
             scrollTrigger: {
