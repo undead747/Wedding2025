@@ -141,7 +141,6 @@ async function initialize() {
     document.body.classList.toggle("intro");
     loopText();
     await imagesLoaded();
-    await delay(6000);
     clearInterval(intervalId);
     document.getElementById("pre-load").style.display = "none";
     runGSAPAnimations();
