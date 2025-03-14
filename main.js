@@ -146,6 +146,7 @@ async function initialize() {
     document.getElementById("pre-load").style.display = "none";
     runGSAPAnimations();
     document.body.classList.toggle("intro");
+    
 }
 
 function runGSAPAnimations() {
@@ -356,6 +357,18 @@ function runGSAPAnimations() {
                     swiper.slidePrev();
                 }
             });
+
+            const scrollBtns = document.querySelectorAll(".btn-seemore");
+            scrollBtns.forEach((btn) => {
+                btn.addEventListener("click", function () {
+                    document.getElementById("in-house").scrollIntoView({
+                        behavior: "smooth",
+                        block: "start" // Aligns to the top of the viewport
+                    });
+                });
+
+            })
+            
 
             document.body.classList.toggle("intro");
         });
