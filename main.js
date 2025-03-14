@@ -268,7 +268,7 @@ function runGSAPAnimations() {
             setTimeout(function () {
                 gsap.to(".js-content_title-1 h1, .js-content_title-2 h1, .js-content_title-1--pc h1, .js-content_title-2--pc h1, .navigation-wrapper__left h4, .navigation-wrapper__right h4, .header-pc__left h4, .header-pc__center1 h4, .header-pc__center2 h2, .header-pc__right h4", {
                     y: 0,
-                    duration: 3,
+                    duration: 2,
                     ease: "hop2",
                     stagger: 0.1,
                 })
@@ -278,7 +278,7 @@ function runGSAPAnimations() {
                     duration: 1,
                     delay: 0.5
                 })
-            }, 1700)
+            }, 1500)
 
 
             setTimeout(() => {
