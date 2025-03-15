@@ -140,7 +140,8 @@ async function initialize() {
     // Initialize the loop
     document.body.classList.toggle("intro");
     loopText();
-    await imagesLoaded();
+    imagesLoaded();
+    await delay(5000);
     clearInterval(intervalId);
     document.getElementById("pre-load").style.display = "none";
     runGSAPAnimations();
