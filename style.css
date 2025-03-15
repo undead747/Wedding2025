@@ -220,44 +220,44 @@ body.intro {
 }
 
 .intro_img .img1 {
-    background: url('/images/in\ studio.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995376/in_studio_cf8hm7.png');
 }
 
 .intro_img .img2 {
-    background: url('/images/santorini-3.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995379/santorini-3_bpksxx.png');
 }
 
 .intro_img .img3 {
-    background: url('/images/5\ garden-1.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995377/5_garden-1_tn8l9v.png');
 }
 
 .intro_img .img4 {
-    background: url('/images/villa\ rose-1.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995381/villa_rose-1_qevuq7.png');
 }
 
 .intro_img .img5 {
-    background: url('/images/ocean\ park\ 3-3.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995381/ocean_park_3-3_aari0y.png');
 }
 
 @media only screen and (min-width: 1200px) {
     .intro_img .img1 {
-        background: url('/images/in\ studio-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995375/in_studio-2_gnfp6j.png');
     }
 
     .intro_img .img2 {
-        background: url('/images/santorini-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995378/santorini-2_y1f06n.png');
     }
 
     .intro_img .img3 {
-        background: url('/images/5\ garden-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995379/5_garden-2_f15vd6.png');
     }
 
     .intro_img .img4 {
-        background: url('/images/villa\ rose-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995381/villa_rose-2_ih2ej3.png');
     }
 
     .intro_img .img5 {
-        background: url('/images/ocean\ park\ 3-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995378/ocean_park_3-2_qczf5n.png');
     }
 }
 
@@ -292,7 +292,7 @@ body.intro {
         flex-direction: column;
         top: calc(50% - 160px);
         left: calc(100% - 120px);
-        width: 10%;
+        width: 120px;
     }
 }
 
@@ -763,44 +763,44 @@ body.intro {
 }
 
 .slide-1 {
-    background: url('/images/in\ studio.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995376/in_studio_cf8hm7.png');
 }
 
 .slide-2 {
-    background: url('/images/santorini-3.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995379/santorini-3_bpksxx.png');
 }
 
 .slide-3 {
-    background: url('/images/5\ garden-1.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995377/5_garden-1_tn8l9v.png');
 }
 
 .slide-4 {
-    background: url('/images/villa\ rose-1.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995381/villa_rose-1_qevuq7.png');
 }
 
 .slide-5 {
-    background: url('/images/ocean\ park\ 3-3.png');
+    background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995381/ocean_park_3-3_aari0y.png');
 }
 
 @media only screen and (min-width: 1200px) {
     .slide-1 {
-        background: url('/images/in\ studio-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995375/in_studio-2_gnfp6j.png');
     }
 
     .slide-2 {
-        background: url('/images/santorini-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995378/santorini-2_y1f06n.png');
     }
 
     .slide-3 {
-        background: url('/images/5\ garden-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995379/5_garden-2_f15vd6.png');
     }
 
     .slide-4 {
-        background: url('/images/villa\ rose-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995381/villa_rose-2_ih2ej3.png');
     }
 
     .slide-5 {
-        background: url('/images/ocean\ park\ 3-2.png');
+        background: url('https://res.cloudinary.com/du8gosuud/image/upload/v1741995378/ocean_park_3-2_qczf5n.png');
     }
 
 }
@@ -1799,6 +1799,7 @@ body.intro {
     }
 
     .contact__map {
+        margin-left: 40px;
         width: 100%;
         margin-top: 0;
         border-radius: 2px;
