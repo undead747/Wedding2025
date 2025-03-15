@@ -298,7 +298,7 @@ function runGSAPAnimations() {
                     duration: 1,
                     delay: 0.5
                 })
-            }, 1500)
+            }, 1000)
 
 
             setTimeout(() => {
