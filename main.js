@@ -140,11 +140,11 @@ async function initialize() {
     // Initialize the loop
     document.body.classList.toggle("intro");
     loopText();
-    // imagesLoaded();
-    // await delay(5000);
-    // clearInterval(intervalId);
-    // document.getElementById("pre-load").style.display = "none";
-    // runGSAPAnimations();
+    imagesLoaded();
+    await delay(5000);
+    clearInterval(intervalId);
+    document.getElementById("pre-load").style.display = "none";
+    runGSAPAnimations();
     document.body.classList.toggle("intro");
     
 }
@@ -299,7 +299,7 @@ function runGSAPAnimations() {
                     duration: 1,
                     delay: 0.5
                 })
-            }, 1000)
+            }, 1500)
 
 
             setTimeout(() => {
