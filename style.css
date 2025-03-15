@@ -167,6 +167,13 @@ body.intro {
     }
 }
 
+body #magicMouseCursor{
+    border-color: black !important;
+}
+
+body #magicPointer{
+    background: black !important;
+}
 
 .curtains {
     position: fixed;

@@ -140,11 +140,11 @@ async function initialize() {
     // Initialize the loop
     document.body.classList.toggle("intro");
     loopText();
-    imagesLoaded();
-    await delay(5000);
-    clearInterval(intervalId);
-    document.getElementById("pre-load").style.display = "none";
-    runGSAPAnimations();
+    // imagesLoaded();
+    // await delay(5000);
+    // clearInterval(intervalId);
+    // document.getElementById("pre-load").style.display = "none";
+    // runGSAPAnimations();
     document.body.classList.toggle("intro");
     
 }
